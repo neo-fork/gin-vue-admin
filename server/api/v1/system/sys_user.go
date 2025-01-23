@@ -1,21 +1,21 @@
 package system
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/model/common"
 	"strconv"
 	"time"
 
+	"github.com/gin-gonic/gin"
+	"github.com/redis/go-redis/v9"
+	"go.uber.org/zap"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
+	"github.com/flipped-aurora/gin-vue-admin/server/model/common"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
 	systemReq "github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
 	systemRes "github.com/flipped-aurora/gin-vue-admin/server/model/system/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/utils"
-
-	"github.com/gin-gonic/gin"
-	"github.com/redis/go-redis/v9"
-	"go.uber.org/zap"
 )
 
 // Login
@@ -34,6 +34,7 @@ func (b *BaseApi) Login(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
+
 	err = utils.Verify(l, utils.LoginVerify)
 	if err != nil {
 		response.FailWithMessage(err.Error(), c)
@@ -70,6 +71,7 @@ func (b *BaseApi) Login(c *gin.Context) {
 		b.TokenNext(c, *user)
 		return
 	}
+
 	// 验证码次数+1
 	global.BlackCache.Increment(key, 1)
 	response.FailWithMessage("验证码错误", c)
