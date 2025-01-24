@@ -15,6 +15,7 @@
         "GOPROXY",
         "huaweicloud",
         "initdb",
+        "iplimit",
         "longger",
         "mapstructure",
         "mattn",
