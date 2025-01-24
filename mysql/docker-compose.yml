@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  mysql:
+  gin-vue-admin-mysql:
     image: mysql:8.0
     restart: always
     container_name: gin-vue-admin-mysql
