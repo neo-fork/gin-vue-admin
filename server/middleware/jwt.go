@@ -25,13 +25,16 @@ func JWTAuth() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
+
 		if jwtService.IsBlacklist(token) {
 			response.NoAuth("您的帐户异地登陆或令牌失效", c)
 			utils.ClearToken(c)
 			c.Abort()
 			return
 		}
+
 		j := utils.NewJWT()
+
 		// parseToken 解析token包含的信息
 		claims, err := j.ParseToken(token)
 		if err != nil {

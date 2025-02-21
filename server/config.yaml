@@ -194,9 +194,9 @@ redis-list:
       db: 0
       useCluster: false
       clusterAddrs:
-        - 172.21.0.3:7000
-        - 172.21.0.4:7001
-        - 172.21.0.2:7002
+          - 172.21.0.3:7000
+          - 172.21.0.4:7001
+          - 172.21.0.2:7002
 sqlite:
     prefix: ""
     port: ""
@@ -231,7 +231,7 @@ tencent-cos:
     path-prefix: github.com/flipped-aurora/gin-vue-admin/server
 zap:
     level: info
-    prefix: '[github.com/flipped-aurora/gin-vue-admin/server]'
+    prefix: "[github.com/flipped-aurora/gin-vue-admin/server]"
     format: console
     director: log
     encode-level: LowercaseColorLevelEncoder
