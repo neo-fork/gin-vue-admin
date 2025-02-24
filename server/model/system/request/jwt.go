@@ -6,16 +6,16 @@ import (
 )
 
 // Custom claims structure
-type CustomClaims struct {
-	BaseClaims
-	BufferTime int64
-	jwt.RegisteredClaims
+type CustomClaims struct { //
+	BaseClaims                 //
+	BufferTime           int64 //
+	jwt.RegisteredClaims       //
 }
 
-type BaseClaims struct {
-	UUID        uuid.UUID
-	ID          uint
-	Username    string
-	NickName    string
-	AuthorityId uint
+type BaseClaims struct { //
+	UUID        uuid.UUID //
+	ID          uint      //
+	Username    string    //
+	NickName    string    //
+	AuthorityId uint      //
 }
