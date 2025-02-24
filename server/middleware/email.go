@@ -6,14 +6,14 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/plugin/email/utils"
-	utils2 "github.com/flipped-aurora/gin-vue-admin/server/utils"
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
+	"github.com/flipped-aurora/gin-vue-admin/server/plugin/email/utils"
 	"github.com/flipped-aurora/gin-vue-admin/server/service"
-	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
+	utils2 "github.com/flipped-aurora/gin-vue-admin/server/utils"
 )
 
 var userService = service.ServiceGroupApp.SystemServiceGroup.UserService
@@ -33,7 +33,7 @@ func ErrorToEmail() gin.HandlerFunc {
 			username = user.Username
 		}
 		body, _ := io.ReadAll(c.Request.Body)
-		// 再重新写回请求体body中，ioutil.ReadAll会清空c.Request.Body中的数据
+		// 再重新写回请求体body中，ioutil.ReadAll 会清空 c.Request.Body 中的数据
 		c.Request.Body = io.NopCloser(bytes.NewBuffer(body))
 		record := system.SysOperationRecord{
 			Ip:     c.ClientIP(),
@@ -56,5 +56,6 @@ func ErrorToEmail() gin.HandlerFunc {
 				global.GVA_LOG.Error("ErrorToEmail Failed, err:", zap.Error(err))
 			}
 		}
+
 	}
 }
