@@ -33,7 +33,6 @@ func (fs justFilesFilesystem) Open(name string) (http.File, error) {
 }
 
 // 初始化总路由
-
 func Routers() *gin.Engine {
 	Router := gin.New()
 	Router.Use(gin.Recovery())

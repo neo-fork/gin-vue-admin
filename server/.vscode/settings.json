@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "Addrs",
         "aliyun",
         "apikey",
         "automaxprocs",
@@ -9,6 +10,7 @@
         "DBNAME",
         "deepcopy",
         "fsnotify",
+        "gkit",
         "goccy",
         "gofrs",
         "gonic",
@@ -36,6 +38,7 @@
         "richardlehane",
         "sagikazarmark",
         "shoenig",
+        "shouzi",
         "songzhibin",
         "swaggertype",
         "syncer"

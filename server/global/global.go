@@ -18,21 +18,21 @@ import (
 )
 
 var (
-	GVA_DB        *gorm.DB
-	GVA_DBList    map[string]*gorm.DB
-	GVA_REDIS     redis.UniversalClient
-	GVA_REDISList map[string]redis.UniversalClient
-	GVA_MONGO     *qmgo.QmgoClient
-	GVA_CONFIG    config.Server
-	GVA_VP        *viper.Viper
-	// GVA_LOG    *oplogging.Logger
-	GVA_LOG                 *zap.Logger
-	GVA_Timer               timer.Timer = timer.NewTimerTask()
-	GVA_Concurrency_Control             = &singleflight.Group{}
-	GVA_ROUTERS             gin.RoutesInfo
-	GVA_ACTIVE_DBNAME       *string
-	BlackCache              local_cache.Cache
-	lock                    sync.RWMutex
+	GVA_DB        *gorm.DB                         //
+	GVA_DBList    map[string]*gorm.DB              //
+	GVA_REDIS     redis.UniversalClient            //
+	GVA_REDISList map[string]redis.UniversalClient //
+	GVA_MONGO     *qmgo.QmgoClient                 //
+	GVA_CONFIG    config.Server                    //
+	GVA_VP        *viper.Viper                     //
+	// GVA_LOG    *oplogging.Logger //
+	GVA_LOG                 *zap.Logger                               //
+	GVA_Timer               timer.Timer       = timer.NewTimerTask()  //
+	GVA_Concurrency_Control                   = &singleflight.Group{} //
+	GVA_ROUTERS             gin.RoutesInfo                            //
+	GVA_ACTIVE_DBNAME       *string                                   //
+	BlackCache              local_cache.Cache                         // jwt 黑名单
+	lock                    sync.RWMutex                              //
 )
 
 // GetGlobalDBByDBName 通过名称获取db list中的db
