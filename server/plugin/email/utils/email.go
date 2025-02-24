@@ -6,9 +6,9 @@ import (
 	"net/smtp"
 	"strings"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/plugin/email/global"
-
 	"github.com/jordan-wright/email"
+
+	"github.com/flipped-aurora/gin-vue-admin/server/plugin/email/global"
 )
 
 //@author: [maplepie](https://github.com/maplepie)
