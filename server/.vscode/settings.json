@@ -4,6 +4,7 @@
         "aliyun",
         "apikey",
         "automaxprocs",
+        "basetypes",
         "Casbin",
         "checkdb",
         "datatypes",
