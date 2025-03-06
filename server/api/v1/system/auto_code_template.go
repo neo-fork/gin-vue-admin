@@ -1,15 +1,17 @@
 package system
 
 import (
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
+
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
 	"github.com/flipped-aurora/gin-vue-admin/server/utils"
-	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 )
 
-type AutoCodeTemplateApi struct{}
+type AutoCodeTemplateApi struct {
+}
 
 // Preview
 // @Tags      AutoCodeTemplate
